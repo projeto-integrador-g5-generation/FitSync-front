@@ -8,12 +8,12 @@ function Slide1() {
       }}
     >
       <div className="flex flex-col gap-5 w-full justify-center items-center">
-        <h1 className="text-cyan-800 text-8xl font-bold drop-shadow-lg">
+        <h1 className="text-cyan-800 text-7xl sm:text-8xl font-bold drop-shadow-lg">
           FITSYNC
         </h1>
         <div className="flex flex-col w-full justify-center items-center">
-          <p className="text-cyan-800 text-4xl drop-shadow-md">Corpo e Mente</p>
-          <p className="text-cyan-800 text-5xl drop-shadow-md">Sinconizados</p>
+          <p className="text-cyan-800 drop-shadow-md text-3xl sm:text-4xl">Corpo e Mente</p>
+          <p className="text-cyan-800 drop-shadow-md text-3xl sm:text-5xl">Sinconizados</p>
           <button className="p-2 text-cyan-800 bg-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl mt-8">Comece Agora</button>
         </div>
       </div>

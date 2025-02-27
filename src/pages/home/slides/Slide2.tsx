@@ -15,11 +15,11 @@ function Slide2() {
         />
       </div>
       <div className="flex flex-col gap-5 w-full justify-center items-center">
-        <h1 className="text-cyan-800 text-8xl font-bold drop-shadow-lg">
+        <h1 className="md:text-cyan-800 text-white text-7xl sm:text-8xl font-bold drop-shadow-lg">
           FITSYNC
         </h1>
         <div className="flex flex-col w-full justify-center items-center gap-8">
-          <p className="text-cyan-800 text-4xl drop-shadow-md text-center">Venha treinar com um plano feito sob medida para você!</p>
+          <p className="md:text-cyan-800 text-white text-3xl sm:text-4xl drop-shadow-lg text-center">Venha treinar com um plano feito sob medida para você!</p>
           <button className="p-2 bg-cyan-800 text-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">Comece Agora</button>
         </div>
       </div>
