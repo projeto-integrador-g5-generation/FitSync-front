@@ -1,28 +1,31 @@
-# Nome do Projeto - Frontend 
+# 🌐 **FitSync - Frontend **
 
 <br />
 
 <div align="center">
-    <img src="https://i.imgur.com/AzshGmS.png" title="source: imgur.com" width="50%"/>
+    <img src="https://ik.imagekit.io/ecspdivlw/icons/logo%20fitsync.png?updatedAt=1740674038746" title="logo fitsync" width="50%"/>
 </div>
-*O Logo do React pode ser substituído pelo Logo do Projeto*
 
 <br /><br />
 
 ## 1. Descrição
 
-*Descreva brevemente o seu projeto*
+O **FitSync** é um sistema web que possui uma interface moderna e responsiva, desenvolvida com React e TypeScript, garantindo uma experiência fluida e intuitiva. Os usuários podem criar e gerenciar seus perfis, explorar uma biblioteca de exercícios organizados por categorias, buscar e filtrar treinos conforme suas metas e acompanhar seu progresso. Utilizando Tailwind CSS para estilização e APIs REST para comunicação com o back-end em NestJS, o sistema proporciona uma navegação dinâmica e eficiente, adaptada para diferentes dispositivos.
 
 ------
 
 ## 2. Recursos
 
-1. *Liste as principais funcionalidades e as features especiais implementadas no Projeto React*
+- **Gerenciamento de Usuários**: Cadastre, edite, visualize e exclua usuários facilmente.
+- **Consulta de Exercícios por Categorias**: Busque e visualize exercícios filtrando por nome ou categoria, garantindo uma experiência personalizada.
+- **Gerenciamento de Exercícios**: Administradores podem criar, atualizar e excluir exercícios, definindo atributos como nome, tempo de execução, séries, repetições, descanso e carga.
+- **Interface Responsiva e Intuitiva**: Desenvolvida com um design moderno, adaptado para diferentes dispositivos e tamanhos de tela.
+- **Exibição com Cards**: Organização visual eficiente para facilitar a navegação e interação dos usuários.
+- **Página Sobre**: Apresentação dos integrantes que desenvolveram o projeto.
 
 ------
 
 ## 3. Protótipo e Capturas de Tela
-
 
 
 *Adicione print da tela inicial e/ou o link do protótipo no Figma (se houver)*
@@ -55,7 +58,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 - [Node.js](https://nodejs.org/) (v16+)
 - [yarn](https://yarnpkg.com/)
-- API NestJS API NestJS ([Repositório da API](link do repositório da api))
+- [API FitSync](https://github.com/projeto-integrador-g5-generation/FitSync)
 
 ---
 
@@ -63,7 +66,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 1. Clone o repositório do Projeto
 2. Instale as dependências: `yarn`
-3. Clone o repositório do Projeto Backend: [Link](link do repositório do Backend)
+3. Clone o repositório do Projeto Backend: [Link](https://github.com/projeto-integrador-g5-generation/FitSync)
 4. Siga as instruções de **Configuração e Execução** descritas no README do Projeto Backend
 5. Adicione o endereço de execução do projeto na variável de ambiente **VITE_API_URL**, no projeto React
 6. Execute o Projeto React: `yarn dev`
@@ -77,7 +80,6 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 src/
 │
 ├── components/       # Componentes reutilizáveis
-├── contexts/         # Gerenciamento de estado global (ex: autenticação)
 ├── models/           # Estrutura de dados da aplicação-
 ├── pages/            # Páginas da aplicação
 ├── services/         # Integração com a API (requisições HTTP)
