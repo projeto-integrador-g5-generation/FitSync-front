@@ -16,32 +16,18 @@ O **FitSync** é um sistema web que possui uma interface moderna e responsiva, d
 
 ## 2. Recursos
 
-<<<<<<< HEAD
 - **Gerenciamento de Usuários**: Cadastre, edite, visualize e exclua usuários facilmente.
 - **Consulta de Exercícios por Categorias**: Busque e visualize exercícios filtrando por nome ou categoria, garantindo uma experiência personalizada.
 - **Gerenciamento de Exercícios**: Administradores podem criar, atualizar e excluir exercícios, definindo atributos como nome, tempo de execução, séries, repetições, descanso e carga.
 - **Interface Responsiva e Intuitiva**: Desenvolvida com um design moderno, adaptado para diferentes dispositivos e tamanhos de tela.
 - **Exibição com Cards**: Organização visual eficiente para facilitar a navegação e interação dos usuários.
 - **Página Sobre**: Apresentação dos integrantes que desenvolveram o projeto.
-=======
- - Gerenciamento de Usuários: Cadastre, edite, visualize e exclua usuários, armazenando informações como nome, data de nascimento, peso, altura, e-mail, senha e foto de perfil.
- - Consulta de Exercícios por Categorias: Busque e visualize exercícios filtrando por nome ou categoria, garantindo uma experiência personalizada.
- - Gerenciamento de Exercícios: Administradores podem criar, atualizar e excluir exercícios, definindo atributos como nome, tempo de execução, séries, repetições, descanso e carga.
- - Interface Responsiva e Intuitiva: Desenvolvida com um design moderno, adaptado para diferentes dispositivos e tamanhos de tela.
- - Exibição com Cards: Organização visual eficiente para facilitar a navegação e interação dos usuários.
- - Página Sobre: Apresentação dos desenvolvedores do FitSync, destacando os responsáveis pelo projeto.
->>>>>>> develop
 
 ------
 
 ## 3. Protótipo e Capturas de Tela
 
 
-<<<<<<< HEAD
-*Adicione print da tela inicial e/ou o link do protótipo no Figma (se houver)*
-
-=======
->>>>>>> develop
 <div align="center">
     <img src="https://ik.imagekit.io/ecspdivlw/Readme/home.png?updatedAt=1740759530226" title="Home" width="50%"/>
 </div>
@@ -77,11 +63,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 - [Node.js](https://nodejs.org/) (v16+)
 - [yarn](https://yarnpkg.com/)
-<<<<<<< HEAD
-- [API FitSync](https://github.com/projeto-integrador-g5-generation/FitSync)
-=======
 - [API FitSync](https://github.com/projeto-integrador-g5-generation/FitSync-nest) 
->>>>>>> develop
 
 ---
 
