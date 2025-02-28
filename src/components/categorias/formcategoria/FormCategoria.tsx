@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
-import { atualizar, cadastrar, consultar } from "../../../service/Service";
+import { atualizar, cadastrar, listar } from "../../../service/Service";
 
 function FormCategoria() {
 
@@ -15,7 +15,7 @@ function FormCategoria() {
 
   async function buscarCategoriaPorId(id: string) {
     try {
-      await consultar(`/categorias/${id}`, setCategoria)
+      await listar(`/categoria/${id}`, setCategoria)
     } catch (error: any) {
       alert("Categoria não encontrada!")
       retornar();
@@ -28,7 +28,8 @@ function FormCategoria() {
     }else{
 			setCategoria({
 				id: 0,
-				tipo: "",
+				nome: "",
+        descricao: "",
 			})	
 		}
   }, [id])
@@ -46,7 +47,7 @@ function FormCategoria() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/categorias`, categoria, setCategoria)
+        await atualizar(`/categoria`, categoria, setCategoria)
 
         alert("Categoria atualizado com sucesso")
 
@@ -56,7 +57,7 @@ function FormCategoria() {
 
     } else {
       try {
-        await cadastrar(`/categorias`, categoria, setCategoria)
+        await cadastrar(`/categoria`, categoria, setCategoria)
 
         alert("Categoria cadastrada com sucesso")
 
@@ -84,14 +85,26 @@ function FormCategoria() {
         onSubmit={gerarNovaCategoria}
       >
         <div className="flex flex-col gap-2">
-          <label htmlFor="categoria">Categoria</label>
+          <label htmlFor="nome">Categoria</label>
           <input
             type="text"
             placeholder="Categoria"
-            name="tipo"
+            name="nome"
             className="p-2 border-2 rounded border-cyan-700 bg-white"
             required
-            value={categoria.tipo}
+            value={categoria.nome}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="descricao">Descrição</label>
+          <input
+            type="text"
+            placeholder="Insira uma descrição"
+            name="descricao"
+            className="p-2 border-2 rounded border-cyan-700 bg-white"
+            required
+            value={categoria.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>

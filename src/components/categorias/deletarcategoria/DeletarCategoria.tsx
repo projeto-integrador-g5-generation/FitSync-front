@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { RotatingLines } from "react-loader-spinner"
 import { useNavigate, useParams } from "react-router-dom"
 import Categoria from "../../../models/Categoria"
-import { consultar, deletar } from "../../../service/Service"
+import { listar, deletar } from "../../../service/Service"
 
 
 function DeletarCategoria() {
@@ -16,7 +16,7 @@ function DeletarCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await consultar(`/categorias/${id}`, setCategoria)
+            await listar(`/categoria/${id}`, setCategoria)
         } catch (error: any) {
             alert("Tema não encontrado!")
         }
@@ -32,7 +32,7 @@ function DeletarCategoria() {
         setIsLoading(true)
 
         try {
-            await deletar(`/categorias/${id}`)
+            await deletar(`/categoria/${id}`)
 
             alert("Categoria apagada com sucesso")
 
@@ -58,7 +58,8 @@ function DeletarCategoria() {
                     className="px-6 py-2 text-2xl font-bold text-white bg-slate-600">
                     Categoria
                 </header>
-                <p className="h-full p-8 text-3xl bg-white">{categoria.tipo}</p>
+                <p className="h-full p-8 text-3xl bg-white">{categoria.nome}</p>
+                <p className="h-full p-8 text-2xl bg-white">{categoria.descricao}</p>
                 <div className="flex">
                     <button
                         className="w-full py-2 bg-red-500 text-slate-50 hover:bg-red-600"

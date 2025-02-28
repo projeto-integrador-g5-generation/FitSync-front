@@ -1,47 +1,48 @@
 import { useEffect, useState } from 'react'
-import { PacmanLoader } from 'react-spinners'
 import Categoria from '../../../models/Categoria'
 import CardCategorias from '../cardcategorias/CardCategorias'
-import { consultar} from '../../../service/Service'
+import { listar } from '../../../service/Service'
+import { DNA } from 'react-loader-spinner'
 
-function ConsultarCategorias() {
-	
-    const [categorias, setCategorias] = useState<Categoria[]>([])
+function ListarCategorias() {
+
+	const [categorias, setCategorias] = useState<Categoria[]>([])
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	async function buscarCategorias() {
-        setIsLoading(true)
+		setIsLoading(true)
 
-        try{
-            await consultar('/categorias', setCategorias)
-        }catch(error: any){
-            console.log("Erro ao listar as Categorias!")
-        }finally{
-            setIsLoading(false)
-        }
-		
+		try {
+			await listar('/categoria', setCategorias)
+		} catch (error: any) {
+			console.log("Erro ao listar as Categorias!")
+		} finally {
+			setIsLoading(false)
+		}
+
 	}
 
 	useEffect(() => {
 		buscarCategorias()
 	}, [categorias.length])
 
+	console.log("Categorias carregadas:", categorias);
+
 	return (
 		<>
-			{isLoading && (
-
-				<PacmanLoader
-					color="#0D9488"
-					margin={0}
-					size={80}
-                    speedMultiplier={2}
-                    aria-label="Pacman-loading"
-                    
+			{categorias === undefined && (
+				<DNA
+					visible={true}
+					height="200"
+					width="200"
+					ariaLabel="dna-loading"
+					wrapperStyle={{}}
+					wrapperClass="dna-wrapper mx-auto"
 				/>
 			)}
 			<div className="flex justify-center w-full my-4">
 				<div className="container flex flex-col mx-4">
-					{ (!isLoading && categorias.length === 0) && (
+					{(!isLoading && categorias.length === 0) && (
 						<span className="my-8 text-3xl text-center">
 							Nenhuma categoria foi
 							encontrada
@@ -62,4 +63,4 @@ function ConsultarCategorias() {
 	)
 }
 
-export default ConsultarCategorias
+export default ListarCategorias

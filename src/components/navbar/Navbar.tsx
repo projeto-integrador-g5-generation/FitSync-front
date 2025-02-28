@@ -41,7 +41,7 @@ function Navbar() {
                     pr-8
                     font-semibold
                 '>
-                    <Link to='/categoria' className='hover:underline'>
+                    <Link to='/categorias' className='hover:underline'>
                         {translate("categoria")}
                     </Link>
                     <Link to='/exercicios' className='hover:underline'> 
