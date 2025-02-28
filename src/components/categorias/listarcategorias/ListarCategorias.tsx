@@ -4,10 +4,13 @@ import CardCategorias from "../cardcategorias/CardCategorias";
 import { listar } from "../../../service/Service";
 import { DNA } from "react-loader-spinner";
 import { Link } from "react-router-dom";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 function ListarCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const { translate } = useDictionary();
 
   async function buscarCategorias() {
     setIsLoading(true);
@@ -42,13 +45,13 @@ function ListarCategorias() {
       <div className="flex flex-col justify-center w-full">
         <div className="flex w-full p-4 justify-end items-center text-center">
           <button className="p-2 bg-cyan-800 text-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">
-            <Link to={"/cadastrarcategoria"}>Cadastrar Categoria</Link>
+            <Link to={"/cadastrarcategoria"}>{translate("cadastrarCat")}</Link>
           </button>
         </div>
         <div className="flex flex-col w-full">
           {!isLoading && categorias.length === 0 && (
             <span className="my-8 text-3xl text-center">
-              Nenhuma categoria foi encontrada
+              {translate("catNotFound")}
             </span>
           )}
 

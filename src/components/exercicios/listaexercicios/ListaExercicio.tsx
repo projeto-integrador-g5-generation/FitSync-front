@@ -5,10 +5,12 @@ import { DNA } from "react-loader-spinner";
 import CardExercicios from "../cardexercicios/CardExercicios";
 import { listar } from "../../../service/Service";
 import { Link } from "react-router-dom";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 function ListaExercicio() {
   const [exercicios, setExercicios] = useState<Exercicio[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { translate } = useDictionary();
 
   async function buscarExercicios() {
     try {
@@ -41,7 +43,7 @@ function ListaExercicio() {
         <div className="flex flex-col justify-center w-full">
           <div className="flex w-full p-4 justify-end items-center text-center">
             <button className="p-2 bg-cyan-800 text-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">
-              <Link to={"/cadastrarexercicio"}>Cadastrar Exercício</Link>
+              <Link to={"/cadastrarexercicio"}>{translate("cadastrarExerc")}</Link>
             </button>
           </div>
           <div className="flex flex-col w-full">

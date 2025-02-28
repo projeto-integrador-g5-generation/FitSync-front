@@ -19,7 +19,7 @@ function Navbar() {
           </Link>
 
           <div className="flex justify-center items-center font-semibold gap-4">
-            <Link to="/categorias" className="hover:underline">
+            <Link to="/categoria" className="hover:underline">
               {translate("categoria")}
             </Link>
             <Link to="/exercicios" className="hover:underline">

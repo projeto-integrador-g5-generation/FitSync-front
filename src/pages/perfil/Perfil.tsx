@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { listar } from "../../service/Service";
 import { Usuario } from "../../models/Usuario";
 import { IMC_FAIXAS } from "./ImcFaixas";
+import { useDictionary } from "../../context/DictionaryProvider";
 
 function Perfil() {
   const [usuario, setUsuario] = useState({} as Usuario);
@@ -12,7 +13,7 @@ function Perfil() {
   const [imcCategoria, setImcCategoria] = useState<string>("");
   const [imcDescricao, setImcDescricao] = useState<string>("");
   const [imcStyle, setImcStyle] = useState<string>("bg-yellow-500");
-
+  const { translate } = useDictionary();
 
   useEffect(() => {
     async function buscarUsuario() {
@@ -63,16 +64,16 @@ function Perfil() {
         <div className="max-w-xl w-full flex flex-col justify-center items-center bg-cyan-900 rounded-2xl shadow-md text-2xl text-white">
           <div className="p-4 text-lg rounded flex flex-col gap-4">
             <p>
-              <span className="font-semibold">Nome:</span> {usuario.nome}
+              <span className="font-semibold">{translate("nome")}:</span> {usuario.nome}
             </p>
             <p>
               <span className="font-semibold">Email:</span> {usuario.usuario}
             </p>
             <p>
-              <span className="font-semibold">Peso:</span> {usuario.peso} Kg
+              <span className="font-semibold">{translate("peso")}:</span> {usuario.peso} Kg
             </p>
             <p>
-              <span className="font-semibold">Altura:</span> {usuario.altura} m
+              <span className="font-semibold">{translate("altura")}:</span> {usuario.altura} m
             </p>
           </div>
         </div>
@@ -80,7 +81,7 @@ function Perfil() {
         <div className="flex flex-col justify-center items-left grow text-2xl bg-cyan-00 rounded-2xl shadow-md bg-cyan-900 text-white">
           <div className="p-2 text-lg rounded">
             <h2 className="text-center text-2xl font-semibold py-3">
-              Índice de Massa Corporal (IMC)
+              {translate("imc")} (IMC)
             </h2>
 
             <div className="flex">
@@ -97,7 +98,7 @@ function Perfil() {
 
               <div className="w-3/5 flex flex-col justify-around items-center">
                 <div className="flex justify-center items-center w-full gap-4">
-                  <h2 className="text-xl font-bold">O seu IMC é: </h2>
+                  <h2 className="text-xl font-bold">{translate("resultadoImc")}: </h2>
                   <h3
                     className={`flex items-center justify-center font-bold rounded-full w-20 h-20 shadow-lg ${imcStyle}`}
                   >

@@ -6,6 +6,8 @@ interface CardCategoriaProps {
 }
 
 function CardCategorias({ categoria }: CardCategoriaProps) {
+  
+
   return (
     <div className="border-1 border-gray-300 flex flex-col drop-shadow-lg text-sm shadow-lg hover:scale-102 transition-all items-center bg-white p-4 rounded-lg gap-2 max-w-96 min-h-60">
       <div className="flex items-center justify-center w-full bg-cyan-700 p-2 gap-4">

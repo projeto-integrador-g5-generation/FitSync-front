@@ -5,11 +5,12 @@ import { useState, useEffect } from "react"
 import { listar, deletar } from "../../../service/Service"
 import { RotatingLines } from "react-loader-spinner"
 import { ToastAlerta } from "../../../util/ToastAlerta"
+import { useDictionary } from "../../../context/DictionaryProvider"
 
 
 function DeletarExercicios() {
 
-
+    const { translate } = useDictionary();
     const navigate = useNavigate()
 
     const [exercicio, setExercicio] = useState<Exercicio>({} as Exercicio)
@@ -57,9 +58,9 @@ function DeletarExercicios() {
   return (
     
     <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Exercicio</h1>
+            <h1 className='text-4xl text-center my-4'>{translate("delExerc")}</h1>
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o Exercicio a seguir?</p>
+                {translate("confirmacaoDelExerc")}</p>
             <div
                 id="container-pai"
                 className="border border-gray-300 w-48 h-80 rounded-3xl flex flex-col overflow-hidden drop-shadow-lg text-sm m-auto bg-white shadow-lg hover:scale-102 transition-all items-center"

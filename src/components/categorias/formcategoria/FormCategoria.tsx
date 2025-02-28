@@ -4,10 +4,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { atualizar, cadastrar, listar } from "../../../service/Service";
 import { ToastAlerta } from "../../../util/ToastAlerta";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 function FormCategoria() {
 
   const navigate = useNavigate();
+
+  const { translate } = useDictionary();
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
@@ -18,7 +21,7 @@ function FormCategoria() {
     try {
       await listar(`/categoria/${id}`, setCategoria)
     } catch (error: any) {
-      ToastAlerta("Categoria não encontrada!")
+      ToastAlerta("Categoria não encontrada!", "erro")
       retornar();
     }
   }
@@ -86,7 +89,7 @@ function FormCategoria() {
         onSubmit={gerarNovaCategoria}
       >
         <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Categoria</label>
+          <label htmlFor="nome">{translate("categoria")}</label>
           <input
             type="text"
             placeholder="Categoria"
@@ -98,7 +101,7 @@ function FormCategoria() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição</label>
+          <label htmlFor="descricao">{translate("descricao")}</label>
           <input
             type="text"
             placeholder="Insira uma descrição"

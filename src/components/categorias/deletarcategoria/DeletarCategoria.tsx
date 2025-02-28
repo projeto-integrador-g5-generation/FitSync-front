@@ -4,9 +4,12 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import Categoria from "../../../models/Categoria"
 import { listar, deletar } from "../../../service/Service"
 import { ToastAlerta } from "../../../util/ToastAlerta"
+import { useDictionary } from "../../../context/DictionaryProvider"
 
 
 function DeletarCategoria() {
+
+    const { translate } = useDictionary();
 
     const navigate = useNavigate()
 
@@ -19,7 +22,7 @@ function DeletarCategoria() {
         try {
             await listar(`/categoria/${id}`, setCategoria)
         } catch (error: any) {
-            ToastAlerta("Tema não encontrado!", "erro")
+            ToastAlerta(`Categoria não encontrada!`, "erro")
         }
     }
 
@@ -51,9 +54,9 @@ function DeletarCategoria() {
 
     return (
         <div className="container w-1/3 mx-auto">
-            <h1 className="py-4 text-4xl text-center">Deletar Categoria</h1>
+            <h1 className="py-4 text-4xl text-center">{translate("deletarCat")}</h1>
             <p className="mb-4 font-semibold text-center">
-                Você tem certeza de que deseja apagar a categoria a seguir?</p>
+                {translate("confirmacaoDeletarCat")}</p>
 
 
             <div
@@ -90,7 +93,7 @@ function DeletarCategoria() {
                         className="w-1/2 py-4 flex items-center justify-center bg-red-500 text-slate-50 hover:bg-red-600 transition-all"
                         onClick={retornar}
                     >
-                        <span>Não</span>
+                        <span>{translate("nao")}</span>
                     </button>
                     <button
                         className="w-1/2 py-4 flex items-center justify-center bg-cyan-400 text-slate-50 hover:bg-cyan-700 transition-all"
@@ -105,7 +108,7 @@ function DeletarCategoria() {
                                 visible={true}
                             />
                         ) : (
-                            <span>Sim</span>
+                            <span>{translate("sim")}</span>
                         )}
                     </button>
                 </div>
