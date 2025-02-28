@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { listar } from "../../service/Service";
-import { Usuario } from "../../model/Usuario";
+import { Usuario } from "../../models/Usuario";
 import { IMC_FAIXAS } from "./ImcFaixas";
 
 function Perfil() {
