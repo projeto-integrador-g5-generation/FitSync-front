@@ -29,7 +29,7 @@ function ListarCategorias() {
 
   return (
     <>
-      {categorias === undefined && (
+      {isLoading && (
         <DNA
           visible={true}
           height="200"

@@ -4,6 +4,7 @@ import Exercicio from "../../../models/Exercicio"
 import { useState, useEffect } from "react"
 import { listar, deletar } from "../../../service/Service"
 import { RotatingLines } from "react-loader-spinner"
+import { ToastAlerta } from "../../../util/ToastAlerta"
 
 
 function DeletarExercicios() {
@@ -21,7 +22,7 @@ function DeletarExercicios() {
             // Simplesmente realiza a requisição sem autenticação
             await listar(`/exercicios/${id}`, setExercicio)
         } catch (error: any) {
-            alert('Erro ao buscar o exercicio.')
+            ToastAlerta('Erro ao buscar o exercicio.', "erro")
         }
     }
     
@@ -38,11 +39,11 @@ function DeletarExercicios() {
             // Simplesmente realiza a requisição de exclusão sem autenticação
             await deletar(`/exercicios/${id}`)
     
-            alert('Exercicio apagado com sucesso')
+            ToastAlerta('Exercicio apagado com sucesso', "sucesso")
     
         } catch (error: any) {
             console.error("Erro ao deletar exercicio:", error)
-            alert('Erro ao deletar o exercicio.')
+            ToastAlerta('Erro ao deletar o exercicio.', "erro")
         }
     
         setIsLoading(false)

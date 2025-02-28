@@ -14,7 +14,7 @@ function Footer() {
         </label>
         <select
             id="language-select"
-            className="mt-2 p-2 bg-cyan-900 text-white rounded-md"
+            className="mt-2 p-2 bg-cyan-900 text-white rounded-md cursor-pointer"
             value={ language }
             onChange={(e) => setLanguage(Number(e.target.value))}
         >

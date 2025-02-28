@@ -11,10 +11,12 @@ import SobreNos from "./pages/sobre/Sobre";
 import DeletarExercicios from "./components/exercicios/deletarexercicios/DeletarExercicios";
 import FormExercicios from "./components/exercicios/formexercicios/FormExercicios";
 import ListaExercicio from "./components/exercicios/listaexercicios/ListaExercicio";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <DictionaryProvider>
           <Navbar />
@@ -24,12 +26,21 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/categorias" element={<ListarCategorias />} />
               <Route path="/cadastrarcategoria" element={<FormCategoria />} />
-              <Route path="/atualizarcategoria/:id" element={<FormCategoria />} />
-              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+              <Route
+                path="/atualizarcategoria/:id"
+                element={<FormCategoria />}
+              />
+              <Route
+                path="/deletarcategoria/:id"
+                element={<DeletarCategoria />}
+              />
               <Route path="/exercicios" element={<ListaExercicio />} />
               <Route path="/cadastrarexercicio" element={<FormExercicios />} />
               <Route path="/editarexercicio/:id" element={<FormExercicios />} />
-              <Route path="/deletarexercicio/:id" element={<DeletarExercicios />} />
+              <Route
+                path="/deletarexercicio/:id"
+                element={<DeletarExercicios />}
+              />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/sobre" element={<SobreNos />} />
             </Routes>

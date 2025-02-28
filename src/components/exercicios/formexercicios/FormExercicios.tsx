@@ -8,6 +8,7 @@ import { RotatingLines } from "react-loader-spinner";
 import Categoria from "../../../models/Categoria";
 import Exercicio from "../../../models/Exercicio";
 import { listar, atualizar, cadastrar } from "../../../service/Service";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 function FormExercicios() {
   const navigate = useNavigate();
@@ -29,8 +30,9 @@ function FormExercicios() {
       // Chama a função buscar para obter os dados do exercicios por id
       await listar(`/exercicios/${id}`, setExercicio);
     } catch (error: any) {
-      alert(
-        "Houve um erro ao tentar buscar o exercicio . Por favor, tente novamente."
+      ToastAlerta(
+        "Houve um erro ao tentar buscar o exercicio . Por favor, tente novamente.",
+        "erro"
       );
     }
   }
@@ -39,7 +41,7 @@ function FormExercicios() {
     try {
       await listar(`/categoria`, setCategorias);
     } catch (error: any) {
-      alert("Erro ao Buscar Categorias");
+      ToastAlerta("Erro ao Buscar Categorias", "erro");
     }
   }
 
@@ -114,17 +116,17 @@ function FormExercicios() {
       try {
         await atualizar(`/exercicios`, exercicio, setExercicio);
 
-        alert("Exercicio atualizado com sucesso");
+        ToastAlerta("Exercicio atualizado com sucesso", "sucesso");
       } catch (error: any) {
-        alert("Erro ao atualizar o Exercicio");
+        ToastAlerta("Erro ao atualizar o Exercicio", "erro");
       }
     } else {
       try {
         await cadastrar(`/exercicios`, exercicio, setExercicio);
 
-        alert("Exercicio cadastrado com sucesso");
+        ToastAlerta("Exercicio cadastrado com sucesso", "sucesso");
       } catch (error: any) {
-        alert("Erro ao cadastrar o Exercicio");
+        ToastAlerta("Erro ao cadastrar o Exercicio", "erro");
       }
     }
 

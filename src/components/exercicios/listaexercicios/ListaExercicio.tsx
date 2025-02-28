@@ -12,6 +12,7 @@ function ListaExercicio() {
 
   async function buscarExercicios() {
     try {
+      setIsLoading(true)
       await listar("/exercicios", setExercicios);
     } catch (error: any) {
       console.log("Erro ao listar os Exercicios!");
