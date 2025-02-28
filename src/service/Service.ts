@@ -4,7 +4,9 @@ const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
 })
 
-export const consultar = async (url: string, setDados: Function) => {
+
+// mudar para listar não esquecer
+export const listar = async (url: string, setDados: Function) => {
     const resposta = await api.get(url);
     setDados(resposta.data);
   };
