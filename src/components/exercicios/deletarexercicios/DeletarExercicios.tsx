@@ -57,13 +57,13 @@ function DeletarExercicios() {
 
   return (
     
-    <div className='container w-1/3 mx-auto'>
+    <div className='container mx-auto p-2'>
             <h1 className='text-4xl text-center my-4'>{translate("delExerc")}</h1>
             <p className='text-center font-semibold mb-4'>
                 {translate("confirmacaoDelExerc")}</p>
             <div
                 id="container-pai"
-                className="border border-gray-300 w-48 h-80 rounded-3xl flex flex-col overflow-hidden drop-shadow-lg text-sm m-auto bg-white shadow-lg hover:scale-102 transition-all items-center"
+                className="border border-gray-300 max-w-98 rounded-3xl flex flex-col overflow-hidden drop-shadow-lg text-sm m-auto bg-white shadow-lg hover:scale-102 transition-all items-center"
             >
                 <div
                     id="Categoria"
@@ -92,13 +92,13 @@ function DeletarExercicios() {
 
                 <div className="flex w-full rounded-b-3xl overflow-hidden">
                     <button
-                        className="w-1/2 py-4 flex items-center justify-center bg-red-500 text-slate-50 hover:bg-red-600 transition-all"
+                        className="w-1/2 py-4 flex items-center cursor-pointer justify-center bg-red-500 text-slate-50 hover:bg-red-600 transition-all"
                         onClick={retornar}
                     >
                         <span>Não</span>
                     </button>
                     <button
-                        className="w-1/2 py-4 flex items-center justify-center bg-cyan-400 text-slate-50 hover:bg-cyan-700 transition-all"
+                        className="w-1/2 py-4 flex cursor-pointer items-center justify-center bg-cyan-400 text-slate-50 hover:bg-cyan-700 transition-all"
                         onClick={deletarExercicio}
                     >
                         {isLoading ? (

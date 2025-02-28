@@ -15,7 +15,7 @@ function CardExercicio({ exercicio }: CardExercicioProps) {
       <div className="border-1 border-gray-300 flex flex-col drop-shadow-lg text-sm shadow-lg hover:scale-102 transition-all items-center bg-white p-4 rounded-lg gap-2 max-w-96">
         <div className="flex items-center justify-center w-full bg-cyan-700 p-2 gap-4  rounded-lg" >
           <div>
-            <Link to={`/deletarexercicios/${exercicio.id}`}>
+            <Link to={`/deletarexercicio/${exercicio.id}`}>
               <img src="https://ik.imagekit.io/50n5k5wmb/heartbeat.svg?updatedAt=1740671289798" />
             </Link>
           </div>
@@ -56,7 +56,6 @@ function CardExercicio({ exercicio }: CardExercicioProps) {
               className="w-full h-full"
               src={exercicio.video}
               title="YouTube video player"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen

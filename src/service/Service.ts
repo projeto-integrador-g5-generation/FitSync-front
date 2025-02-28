@@ -7,7 +7,6 @@ const api = axios.create({
 export const listar = async (url: string, setDados: Function) => {
   try {
     const resposta = await api.get(url);
-    console.log("Resposta da API:", resposta.data);  // Verifique a resposta aqui
     setDados(resposta.data);
   } catch (error) {
     console.error("Erro na requisição:", error);

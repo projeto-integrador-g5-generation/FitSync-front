@@ -28,8 +28,6 @@ function ListarCategorias() {
     buscarCategorias();
   }, [categorias.length]);
 
-  console.log("Categorias carregadas:", categorias);
-
   return (
     <>
       {isLoading && (
