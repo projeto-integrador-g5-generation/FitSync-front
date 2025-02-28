@@ -45,14 +45,14 @@ function ListarCategorias() {
             <Link to={"/cadastrarcategoria"}>Cadastrar Categoria</Link>
           </button>
         </div>
-        <div className="container flex flex-col mx-4">
+        <div className="flex flex-col w-full">
           {!isLoading && categorias.length === 0 && (
             <span className="my-8 text-3xl text-center">
               Nenhuma categoria foi encontrada
             </span>
           )}
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="md:grid-cols-2 justify-center w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6">
             {categorias.map((categoria) => (
               <CardCategorias key={categoria.id} categoria={categoria} />
             ))}
