@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Slide2() {
   return (
     <div
@@ -19,8 +21,12 @@ function Slide2() {
           FITSYNC
         </h1>
         <div className="flex flex-col w-full justify-center items-center gap-8">
-          <p className="md:text-cyan-800 text-white text-3xl sm:text-4xl drop-shadow-lg text-center">Venha treinar com um plano feito sob medida para você!</p>
-          <button className="p-2 bg-cyan-800 text-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">Comece Agora</button>
+          <p className="md:text-cyan-800 text-white text-3xl sm:text-4xl drop-shadow-lg text-center">
+            Venha treinar com um plano feito sob medida para você!
+          </p>
+          <button className="p-2 bg-cyan-800 text-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">
+            <Link to={"/exercicios"}>Comece agora!</Link>
+          </button>
         </div>
       </div>
     </div>
