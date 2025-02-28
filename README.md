@@ -1,39 +1,47 @@
-# Nome do Projeto - Frontend 
+# 🌐 **FitSync - Frontend **
 
 <br />
 
 <div align="center">
-    <img src="https://i.imgur.com/AzshGmS.png" title="source: imgur.com" width="50%"/>
+    <img src="https://ik.imagekit.io/ecspdivlw/icons/logo%20fitsync.png?updatedAt=1740674038746" title="logo fitsync" width="50%"/>
 </div>
-*O Logo do React pode ser substituído pelo Logo do Projeto*
 
 <br /><br />
 
 ## 1. Descrição
 
-*Descreva brevemente o seu projeto*
+O **FitSync** é um sistema web que possui uma interface moderna e responsiva, desenvolvida com React e TypeScript, garantindo uma experiência fluida e intuitiva. Os usuários podem criar e gerenciar seus perfis, explorar uma biblioteca de exercícios organizados por categorias, buscar e filtrar treinos conforme suas metas e acompanhar seu progresso. Utilizando Tailwind CSS para estilização e APIs REST para comunicação com o back-end em NestJS, o sistema proporciona uma navegação dinâmica e eficiente, adaptada para diferentes dispositivos.
 
 ------
 
 ## 2. Recursos
 
-1. *Liste as principais funcionalidades e as features especiais implementadas no Projeto React*
+ - Gerenciamento de Usuários: Cadastre, edite, visualize e exclua usuários, armazenando informações como nome, data de nascimento, peso, altura, e-mail, senha e foto de perfil.
+ - Consulta de Exercícios por Categorias: Busque e visualize exercícios filtrando por nome ou categoria, garantindo uma experiência personalizada.
+ - Gerenciamento de Exercícios: Administradores podem criar, atualizar e excluir exercícios, definindo atributos como nome, tempo de execução, séries, repetições, descanso e carga.
+ - Interface Responsiva e Intuitiva: Desenvolvida com um design moderno, adaptado para diferentes dispositivos e tamanhos de tela.
+ - Exibição com Cards: Organização visual eficiente para facilitar a navegação e interação dos usuários.
+ - Página Sobre: Apresentação dos desenvolvedores do FitSync, destacando os responsáveis pelo projeto.
 
 ------
 
 ## 3. Protótipo e Capturas de Tela
 
 
-
-*Adicione print da tela inicial e/ou o link do protótipo no Figma (se houver)*
-
 <div align="center">
-    <img src="mudar" title="source: imgur.com" width="50%"/>
+    <img src="https://ik.imagekit.io/ecspdivlw/Readme/home.png?updatedAt=1740759530226" title="Home" width="50%"/>
+</div>
+<div align="center">
+    <img src="https://ik.imagekit.io/ecspdivlw/Readme/exercicio.png?updatedAt=1740759530601" title="Exercicio" width="50%"/>
+</div>
+<div align="center">
+    <img src="https://ik.imagekit.io/ecspdivlw/Readme/sobre.png?updatedAt=1740759530879" title="Sobre" width="50%"/>
+</div>
+<div align="center">
+    <img src="https://ik.imagekit.io/ecspdivlw/Readme/perfil.png?updatedAt=1740759531656" title="Perfil" width="50%"/>
 </div>
 
 <br />
-
-<a href="https://imgur.com/vK8ulM5"><img src="https://i.imgur.com/vK8ulM5.png" title="source: imgur.com" width="3%"/></a> [Protótipo desenvolvido no Figma](link para o Figma do Projeto)
 
 ------
 
@@ -55,7 +63,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 - [Node.js](https://nodejs.org/) (v16+)
 - [yarn](https://yarnpkg.com/)
-- API NestJS API NestJS ([Repositório da API](link do repositório da api))
+- [API FitSync](https://github.com/projeto-integrador-g5-generation/FitSync-nest) 
 
 ---
 
