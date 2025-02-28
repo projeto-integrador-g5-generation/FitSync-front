@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import Exercicio from "../../../models/Exercicio";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 interface CardExercicioProps {
   exercicio: Exercicio;
 }
 
 function CardExercicio({ exercicio }: CardExercicioProps) {
+  
+  const { translate } = useDictionary();
+  
   return (
     <>
       <div className="border-1 border-gray-300 flex flex-col drop-shadow-lg text-sm shadow-lg hover:scale-102 transition-all items-center bg-white p-4 rounded-lg gap-2 max-w-96">
         <div className="flex items-center justify-center w-full bg-cyan-700 p-2 gap-4  rounded-lg" >
           <div>
-            <Link to={`/deletarexercicios/${exercicio.id}`}>
+            <Link to={`/deletarexercicio/${exercicio.id}`}>
               <img src="https://ik.imagekit.io/50n5k5wmb/heartbeat.svg?updatedAt=1740671289798" />
             </Link>
           </div>
@@ -35,27 +39,26 @@ function CardExercicio({ exercicio }: CardExercicioProps) {
 
         <div className="flex flex-col bg-cyan-700 text-white w-full  rounded-lg">
           <div className="p-2 text-md">
-            <h1>Treino:</h1>
-            <p>Tempo (min): {exercicio.tempo}</p>
-            <p>Séries: {exercicio.series}</p>
-            <p>Repetições: {exercicio.repeticoes}</p>
-            <p>Descanso: {exercicio.descanso}</p>
-            <p>Carga: {exercicio.carga}</p>
+            <h1>{translate("treino")}:</h1>
+            <p>{translate("tempo")} (min): {exercicio.tempo}</p>
+            <p>{translate("series")}: {exercicio.series}</p>
+            <p>{translate("repeticoes")}: {exercicio.repeticoes}</p>
+            <p>{translate("descanso")}: {exercicio.descanso}</p>
+            <p>{translate("carga")}: {exercicio.carga}</p>
           </div>
         </div>
 
         <div className=" bg-cyan-700 flex flex-col justify-center items-center w-full  rounded-lg">
-          <h3 className="text-white text-lg">Execução do exercicio</h3>
+          <h3 className="text-white text-lg">{translate("execExerc")}</h3>
 
           <div id="video" className="w-full p-2 min-h-56">
             <iframe
               className="w-full h-full"
               src={exercicio.video}
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         </div>

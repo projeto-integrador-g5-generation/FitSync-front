@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 function Slide3() {
+
+  const { translate } = useDictionary();
+
   return (
     <div
       className="flex justify-center bg-cyan-200 min-h-screen w-full bg-no-repeat bg-cover h-screen p-8"
@@ -15,10 +19,10 @@ function Slide3() {
         </h1>
         <div className="flex flex-col w-full justify-center items-center gap-8">
           <p className="text-cyan-800 drop-shadow-md text-center text-3xl sm:text-4xl">
-            Mantenha-se motivado e alcance sua melhor versão!
+            {translate("motivado")}
           </p>
           <button className="p-2 text-cyan-800 bg-white shadow-md rounded-md hover:scale-105 transition-all cursor-pointer text-2xl">
-            <Link to={"/exercicios"}>Comece agora!</Link>
+            <Link to={"/exercicios"}>{translate("comece")}</Link>
           </button>
         </div>
       </div>

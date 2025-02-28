@@ -4,9 +4,12 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import Categoria from "../../../models/Categoria"
 import { listar, deletar } from "../../../service/Service"
 import { ToastAlerta } from "../../../util/ToastAlerta"
+import { useDictionary } from "../../../context/DictionaryProvider"
 
 
 function DeletarCategoria() {
+
+    const { translate } = useDictionary();
 
     const navigate = useNavigate()
 
@@ -19,7 +22,7 @@ function DeletarCategoria() {
         try {
             await listar(`/categoria/${id}`, setCategoria)
         } catch (error: any) {
-            ToastAlerta("Tema não encontrado!", "erro")
+            ToastAlerta(`Categoria não encontrada!`, "erro")
         }
     }
 
@@ -50,15 +53,15 @@ function DeletarCategoria() {
     }
 
     return (
-        <div className="container w-1/3 mx-auto">
-            <h1 className="py-4 text-4xl text-center">Deletar Categoria</h1>
+        <div className="container mx-auto p-2">
+            <h1 className="py-4 text-4xl text-center">{translate("deletarCat")}</h1>
             <p className="mb-4 font-semibold text-center">
-                Você tem certeza de que deseja apagar a categoria a seguir?</p>
+                {translate("confirmacaoDeletarCat")}</p>
 
 
             <div
                 id="container-pai"
-                className="border border-gray-300 w-48 h-80 rounded-3xl flex flex-col overflow-hidden drop-shadow-lg text-sm m-auto bg-white shadow-lg hover:scale-102 transition-all items-center"
+                className="border border-gray-300 max-w-98 rounded-3xl flex flex-col overflow-hidden drop-shadow-lg text-sm m-auto bg-white shadow-lg hover:scale-102 transition-all items-center"
             >
                 <div
                     id="Categoria"
@@ -87,13 +90,13 @@ function DeletarCategoria() {
 
                 <div className="flex w-full rounded-b-3xl overflow-hidden">
                     <button
-                        className="w-1/2 py-4 flex items-center justify-center bg-red-500 text-slate-50 hover:bg-red-600 transition-all"
+                        className="w-1/2 py-4 cursor-pointer flex items-center justify-center bg-red-500 text-slate-50 hover:bg-red-600 transition-all"
                         onClick={retornar}
                     >
-                        <span>Não</span>
+                        <span>{translate("nao")}</span>
                     </button>
                     <button
-                        className="w-1/2 py-4 flex items-center justify-center bg-cyan-400 text-slate-50 hover:bg-cyan-700 transition-all"
+                        className="w-1/2 py-4 flex cursor-pointer items-center justify-center bg-cyan-400 text-slate-50 hover:bg-cyan-700 transition-all"
                         onClick={deletarCategoria}
                     >
                         {isLoading ? (
@@ -105,42 +108,11 @@ function DeletarCategoria() {
                                 visible={true}
                             />
                         ) : (
-                            <span>Sim</span>
+                            <span>{translate("sim")}</span>
                         )}
                     </button>
                 </div>
             </div>
-            {/* <div className="flex flex-col justify-between overflow-hidden border rounded-2xl">
-                <header
-                    className="px-6 py-2 text-2xl font-bold text-white bg-slate-600">
-                    Categoria
-                </header>
-                <p className="h-full p-8 text-3xl bg-white">{categoria.nome}</p>
-                <p className="h-full p-8 text-2xl bg-white">{categoria.descricao}</p>
-                <div className="flex">
-                    <button
-                        className="w-full py-2 bg-red-500 text-slate-50 hover:bg-red-600"
-                        onClick={retornar}
-                    >
-                        Não
-                    </button>
-                    <button
-                        className="flex items-center justify-center w-full bg-cyan-400 text-slate-50 hover:bg-cyan-700"
-                        onClick={deletarCategoria}
-                    >
-                        {isLoading ?
-                            <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
-                            <span>Sim</span>
-                        }
-                    </button>
-                </div>
-            </div> */}
         </div>
     )
 }

@@ -9,9 +9,11 @@ import Categoria from "../../../models/Categoria";
 import Exercicio from "../../../models/Exercicio";
 import { listar, atualizar, cadastrar } from "../../../service/Service";
 import { ToastAlerta } from "../../../util/ToastAlerta";
+import { useDictionary } from "../../../context/DictionaryProvider";
 
 function FormExercicios() {
   const navigate = useNavigate();
+  const { translate } = useDictionary();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -144,7 +146,7 @@ function FormExercicios() {
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoExercicio}>
         <div className="flex flex-col gap-1">
-          <label htmlFor="nome">Exercicio</label>
+          <label htmlFor="nome">{translate("exercicio")}</label>
           <input
             value={exercicio.nome || ""}
             onChange={atualizarEstado}
@@ -157,7 +159,7 @@ function FormExercicios() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="tempo">Tempo do Exercicio (min)</label>
+          <label htmlFor="tempo">{translate("tempoExerc")} (min)</label>
           <input
             value={exercicio.tempo || ""}
             onChange={atualizarEstado}
@@ -171,7 +173,7 @@ function FormExercicios() {
 
         <div className="flex justify-between w-full flex-wrap">
           <div className="flex flex-col gap-1 w-1/2 pr-1">
-            <label htmlFor="serie">Séries</label>
+            <label htmlFor="serie">{translate("series")}</label>
             <input
               value={exercicio.series || ""}
               onChange={atualizarEstado}
@@ -184,7 +186,7 @@ function FormExercicios() {
           </div>
 
           <div className="flex flex-col gap-1 w-1/2 pl-1">
-            <label htmlFor="repeticao">Repetições</label>
+            <label htmlFor="repeticao">{translate("repeticoes")}</label>
             <input
               value={exercicio.repeticoes || ""}
               onChange={atualizarEstado}
@@ -197,7 +199,7 @@ function FormExercicios() {
           </div>
 
           <div className="flex flex-col gap-1 w-1/2 pr-1">
-            <label htmlFor="peso">Peso (Kg)</label>
+            <label htmlFor="peso">{translate("carga")} (Kg)</label>
             <input
               value={exercicio.carga || ""}
               onChange={atualizarEstado}
@@ -210,7 +212,7 @@ function FormExercicios() {
           </div>
 
           <div className="flex flex-col gap-1 w-1/2 pl-1">
-            <label htmlFor="descanso">Descanso (min)</label>
+            <label htmlFor="descanso">{translate("descanso")} (min)</label>
             <input
               value={exercicio.descanso || ""}
               onChange={atualizarEstado}
@@ -224,7 +226,7 @@ function FormExercicios() {
         </div>
 
         <div className="flex flex-col gap-1 ">
-          <label htmlFor="video">video do Exercício</label>
+          <label htmlFor="video">{translate("videoExerc")}</label>
           <input
             type="text"
             placeholder="Insira um video"
@@ -237,7 +239,7 @@ function FormExercicios() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <p>Categoria</p>
+          <p>{translate("categoria")}</p>
           <select
             name="categoria"
             id="categoria"
@@ -246,7 +248,7 @@ function FormExercicios() {
             value={exercicio.categoria?.id || ""}
           >
             <option value="" disabled>
-              Selecione um Categoria
+              {translate("selecionarCat")}
             </option>
             {categorias.map((categoria) => (
               <option key={categoria.id} value={categoria.id}>
