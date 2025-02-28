@@ -1,13 +1,14 @@
 ﻿import Categoria from "./Categoria";
 
-export default interface Exercicio {
-  id: number;
-  nome: string;
-  tempo: number;
-  serie: number;
-  repeticao: number;
-  peso: number;
-  descanso: number;
-  foto: string;
-  categoria: Categoria | null;
+export default interface Exercicio{
+    id: number;
+    nome: string;
+    tempo: number;
+    series: number ;
+    repeticoes: number;
+    descanso: number ;
+    carga: number ;
+    video: string;
+    categoria: Categoria;
+
 }
