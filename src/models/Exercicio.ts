@@ -9,6 +9,6 @@ export default interface Exercicio{
     descanso: number ;
     carga: number ;
     video: string;
-    categoria: Categoria;
+    categoria?: Categoria | null;
 
 }
