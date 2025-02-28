@@ -18,7 +18,7 @@ function FormCategoria() {
     try {
       await listar(`/categoria/${id}`, setCategoria)
     } catch (error: any) {
-      ToastAlerta("Categoria não encontrada!")
+      ToastAlerta("Categoria não encontrada!", "erro")
       retornar();
     }
   }

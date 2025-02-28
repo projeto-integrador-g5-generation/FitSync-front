@@ -137,7 +137,7 @@ function FormExercicios() {
   const categoriaSelecionado = exercicio.categoria?.id !== undefined;
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto items-center p-4">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Exercício" : "Cadastrar Exercício"}
       </h1>
@@ -258,7 +258,7 @@ function FormExercicios() {
 
         <button
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+          className="rounded disabled:bg-slate-200 bg-cyan-400 hover:bg-cyan-800 text-white font-bold w-1/2 mx-auto py-2 flex justify-center "
           disabled={!categoriaSelecionado || isLoading}
           // disabled={carregandoCategoria}
         >
