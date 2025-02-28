@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { consultar } from "../../service/Service";
-import { IMC_FAIXAS } from "./IMCFaixas";
+import { listar } from "../../service/Service";
 import { Usuario } from "../../model/Usuario";
+import { IMC_FAIXAS } from "./ImcFaixas";
 
 function Perfil() {
   const [usuario, setUsuario] = useState({} as Usuario);
@@ -17,7 +17,7 @@ function Perfil() {
   useEffect(() => {
     async function buscarUsuario() {
       try {
-        await consultar(`/usuarios/2`, setUsuario);
+        await listar(`/usuarios/2`, setUsuario);
       } catch (error: any) {
         if (error.toString().includes("401")) {
           console.log(error)

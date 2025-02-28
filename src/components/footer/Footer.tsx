@@ -9,7 +9,7 @@ function Footer() {
 
   return (
     <>
-     <div className="w-full p-4 bg-cyan-700 text-white text-center flex flex-col items-center">
+     <div className="w-full p-4 bg-gradient-to-r from-cyan-400 to-cyan-700 text-white text-center flex flex-col items-center">
         <label htmlFor="language-select" className="mt-2">
         </label>
         <select
@@ -26,7 +26,7 @@ function Footer() {
     <div className="
             flex 
             justify-center 
-            bg-cyan-700
+            bg-gradient-to-r from-cyan-400 to-cyan-700
             text-white
             
         ">

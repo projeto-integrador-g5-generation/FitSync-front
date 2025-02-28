@@ -1,5 +1,4 @@
-import Carrossel from "../../componentes/equipe/carrossel/Carrossel";
-
+import Carrossel from "../../components/equipe/carrossel/Carrossel";
 
 function SobreNos(){
 

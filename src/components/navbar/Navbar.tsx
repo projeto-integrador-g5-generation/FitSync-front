@@ -14,7 +14,7 @@ function Navbar() {
             flex 
             justify-center 
             py-4 
-            bg-cyan-700 
+            bg-gradient-to-r from-cyan-400 to-cyan-700 
             text-white
         '>
             <div className='
@@ -47,10 +47,10 @@ function Navbar() {
                     <Link to='/exercicios' className='hover:underline'> 
                         {translate("exercicios")}
                     </Link>
-                    <Link to='/' className='hover:underline'>       
+                    <Link to='/sobre' className='hover:underline'>       
                         {translate("about")}
                     </Link> 
-                    <Link to='/usuarios' className='hover:underline'>
+                    <Link to='/perfil' className='hover:underline'>
                         <User size={32} /> 
                     </Link>
                 </div>
